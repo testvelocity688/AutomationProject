@@ -38,3 +38,6 @@ public class Demo {
 	}
 
 }
+
+
+//I have added atuomation code for TC02
