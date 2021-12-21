@@ -58,3 +58,33 @@ public class RegistrationPage {
 }
 }
 
+
+package page_object_model;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class TestClass {
+
+	public static void main(String[] args) {
+System.setProperty("webdriver.chrome.driver", "D:\\selenium\\chrome selenium driver_win32\\chromedriver.exe");
+		
+		WebDriver driver=new ChromeDriver();
+		driver.get("https://www.facebook.com/r.php?locale=en_GB&display=page");
+		RegistrationPage pom= new RegistrationPage(driver);
+		
+		// TC 01
+		
+		pom.Enterfirstname("sagar");
+		pom.Enterlastname("wankhede");
+		pom.Entermob("888888888");
+		pom.EnterNewpass("888888888");
+		pom.selectRadiobutton();
+		
+	
+		
+		pom.clicksignUp();
+}
+}
+
