@@ -1,0 +1,91 @@
+package testNG_testing;
+
+import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class Annotation_Before_After {
+
+	@Test(priority = 2)    // According to priority method will execute.
+	public void TC01() {
+
+		Reporter.log("TC01 - Running", true);
+
+		// System.out.println("Sample text");
+
+	}
+
+	@Test(invocationCount = 4)  // Invocation - method will execute multiple times base on input.
+	public void TC02() {
+
+		Reporter.log("TC02 - Running", true);
+
+	}
+
+	@Test(priority = -3)
+	public void TC03() {
+
+		Reporter.log("TC03 - running", true);
+
+	}
+
+	@Test(priority = -2)
+	public void TC04() {
+
+		Reporter.log("TC04 - Running", true);
+
+	}
+	
+	@Test
+	public void aTC02() {
+
+		Reporter.log("aaaTC02 - Running", true);
+
+	}
+
+	@Test(enabled= false)
+	public void cTC02() {
+
+		Reporter.log("cccTC02 - Running", true);
+
+	}
+	
+	@Test
+	public void bTC02() {
+
+		Reporter.log("bbbTC02 - Running", true);
+
+	}
+	
+	@BeforeMethod
+	public void login() {
+
+		Reporter.log("Login to Application", true);
+	}
+
+	@AfterClass
+	public void browser_close() {
+
+		Reporter.log("Browser id Closed", true);
+
+	}
+
+	@AfterMethod
+	public void logout() {
+
+		Reporter.log("Logout from Application", true);
+		Reporter.log("------------------------", true);
+
+	}
+
+	@BeforeClass
+	public void browser_open() {
+
+		Reporter.log("Browser is Opened", true);
+
+	}
+
+}
